@@ -164,7 +164,7 @@ setup () {
 
   mv /tmp/data.txt ./data.txt
 
-  sudo iptables -A INPUT -s 146.66.155.52 -j DROP
+  sudo iptables -A INPUT -s 146.66.155.0/24 -j DROP
   sudo iptables -A INPUT -s 155.133.248.0/24 -j DROP
   sudo iptables -A INPUT -s 155.133.230.0/24 -j DROP
   sudo iptables -A INPUT -s 185.25.182.0/24 -j DROP
