@@ -164,6 +164,36 @@ setup () {
 
   mv /tmp/data.txt ./data.txt
 
+  sudo iptables -A INPUT -s 185.25.182.68 -j DROP
+  sudo iptables -A INPUT -s 162.254.196.66 -j DROP
+  sudo iptables -A INPUT -s 155.133.248.52 -j DROP
+  sudo iptables -A INPUT -s 162.254.198.103 -j DROP
+  sudo iptables -A INPUT -s 155.133.252.51 -j DROP
+  sudo iptables -A INPUT -s 146.66.155.52 -j DROP
+  sudo iptables -A INPUT -s 155.133.230.67 -j DROP
+  sudo iptables -A INPUT -s 162.254.192.70 -j DROP
+  sudo iptables -A INPUT -s 162.254.199.178 -j DROP
+  sudo iptables -A INPUT -s 162.254.193.101 -j DROP
+  sudo iptables -A INPUT -s 185.25.183.178 -j DROP
+  sudo iptables -A INPUT -s 162.254.195.86 -j DROP
+  sudo iptables -A INPUT -s 205.196.6.74 -j DROP
+  sudo iptables -A INPUT -s 155.133.233.99 -j DROP
+  sudo iptables -A INPUT -s 155.133.232.98 -j DROP
+  sudo iptables -A INPUT -s 103.10.124.99 -j DROP
+  sudo iptables -A INPUT -s 155.133.238.162 -j DROP
+  sudo iptables -A INPUT -s 205.185.194.36 -j DROP
+  sudo iptables -A INPUT -s 190.217.33.66 -j DROP
+  sudo iptables -A INPUT -s 155.133.249.194 -j DROP
+  sudo iptables -A INPUT -s 155.133.239.59 -j DROP
+  sudo iptables -A INPUT -s 155.133.245.34 -j DROP
+  sudo iptables -A INPUT -s 103.10.125.146 -j DROP
+  sudo iptables -A INPUT -s 155.133.250.130 -j DROP
+  sudo iptables -A INPUT -s 155.133.254.138 -j DROP
+  sudo iptables -A INPUT -s 155.133.253.4 -j DROP
+  sudo iptables -A INPUT -s 155.133.235.34 -j DROP
+  sudo iptables -A INPUT -s 146.66.154.35 -j DROP
+
+
   echo "-m string --string $reject_str --algo bm -j REJECT" > reject.rule
   sudo iptables -I FORWARD -m string --string $reject_str --algo bm -j REJECT
 
