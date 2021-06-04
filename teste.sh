@@ -164,39 +164,60 @@ setup () {
 
   mv /tmp/data.txt ./data.txt
 
-  sudo iptables -A INPUT -s 146.66.155.0/24 -j DROP
-  sudo iptables -A INPUT -s 155.133.248.0/24 -j DROP
-  sudo iptables -A INPUT -s 155.133.230.0/24 -j DROP
-  sudo iptables -A INPUT -s 185.25.182.0/24 -j DROP
-  sudo iptables -A INPUT -s 103.10.124.0/24 -j DROP
-  sudo iptables -A INPUT -s 103.10.125.0/24 -j DROP
-  sudo iptables -A INPUT -s 139.45.193.0/24 -j DROP
-  sudo iptables -A INPUT -s 146.66.154.0/24 -j DROP
-  sudo iptables -A INPUT -s 155.133.232.0/24 -j DROP
-  sudo iptables -A INPUT -s 155.133.233.0/24 -j DROP
-  sudo iptables -A INPUT -s 155.133.235.0/24 -j DROP
 
-  sudo iptables -A INPUT -s 155.133.238.0/24 -j DROP
-  sudo iptables -A INPUT -s 155.133.239.0/24 -j DROP
-  sudo iptables -A INPUT -s 155.133.245.0/24 -j DROP
-  #sudo iptables -A INPUT -s 155.133.246.0/24 -j DROP
-  sudo iptables -A INPUT -s 155.133.249.0/24 -j DROP
-  sudo iptables -A INPUT -s 155.133.250.0/24 -j DROP
-  sudo iptables -A INPUT -s 155.133.252.0/24 -j DROP
-  sudo iptables -A INPUT -s 155.133.253.0/24 -j DROP
-  sudo iptables -A INPUT -s 155.133.254.0/24 -j DROP
+#sudo iptables -A INPUT -s 185.25.182.0/24 -j DROP
+sudo iptables -A INPUT -s 155.133.248.0/24 -j DROP
+sudo iptables -A INPUT -s 162.254.196.0/24 -j DROP
 
-  sudo iptables -A INPUT -s 162.254.192.0/24 -j DROP
-  sudo iptables -A INPUT -s 162.254.193.0/24 -j DROP
-  sudo iptables -A INPUT -s 162.254.195.0/24 -j DROP
-  sudo iptables -A INPUT -s 162.254.198.0/24 -j DROP
-  sudo iptables -A INPUT -s 162.254.199.0/24 -j DROP
-  sudo iptables -A INPUT -s 185.25.183.0/24 -j DROP
-  sudo iptables -A INPUT -s 190.217.33.0/24 -j DROP
-  sudo iptables -A INPUT -s 205.185.194.0/24 -j DROP
-  sudo iptables -A INPUT -s 205.196.6.0/24 -j DROP
-  sudo iptables -A INPUT -s 205.209.16.0/24 -j DROP
-  sudo iptables -A INPUT -s 205.234.119.0/24 -j DROP
+sudo iptables -A INPUT -s 103.10.124.0/24 -j DROP
+sudo iptables -A INPUT -s 103.10.125.0/24 -j DROP
+sudo iptables -A INPUT -s 139.45.193.0/24 -j DROP
+sudo iptables -A INPUT -s 146.66.154.0/24 -j DROP
+sudo iptables -A INPUT -s 146.66.155.0/24 -j DROP
+sudo iptables -A INPUT -s 146.66.156.0/23 -j DROP
+sudo iptables -A INPUT -s 155.133.228.0/23 -j DROP
+sudo iptables -A INPUT -s 155.133.230.0/23 -j DROP
+sudo iptables -A INPUT -s 155.133.232.0/24 -j DROP
+sudo iptables -A INPUT -s 155.133.233.0/24 -j DROP
+sudo iptables -A INPUT -s 155.133.235.0/24 -j DROP
+sudo iptables -A INPUT -s 155.133.238.0/24 -j DROP
+sudo iptables -A INPUT -s 155.133.239.0/24 -j DROP
+sudo iptables -A INPUT -s 155.133.242.0/23 -j DROP
+sudo iptables -A INPUT -s 155.133.244.0/24 -j DROP
+sudo iptables -A INPUT -s 155.133.245.0/24 -j DROP
+sudo iptables -A INPUT -s 155.133.246.0/23 -j DROP
+sudo iptables -A INPUT -s 155.133.249.0/24 -j DROP
+sudo iptables -A INPUT -s 155.133.250.0/24 -j DROP
+sudo iptables -A INPUT -s 155.133.251.0/24 -j DROP
+sudo iptables -A INPUT -s 155.133.252.0/24 -j DROP
+sudo iptables -A INPUT -s 155.133.253.0/24 -j DROP
+sudo iptables -A INPUT -s 155.133.254.0/24 -j DROP
+sudo iptables -A INPUT -s 155.133.255.0/24 -j DROP
+sudo iptables -A INPUT -s 162.254.192.0/24 -j DROP
+sudo iptables -A INPUT -s 162.254.193.0/24 -j DROP
+sudo iptables -A INPUT -s 162.254.194.0/23 -j DROP
+sudo iptables -A INPUT -s 162.254.195.0/24 -j DROP
+sudo iptables -A INPUT -s 162.254.197.0/24 -j DROP
+sudo iptables -A INPUT -s 162.254.198.0/24 -j DROP
+sudo iptables -A INPUT -s 162.254.199.0/24 -j DROP
+sudo iptables -A INPUT -s 185.25.180.0/23 -j DROP
+sudo iptables -A INPUT -s 185.25.183.0/24 -j DROP
+sudo iptables -A INPUT -s 190.216.121.0/24 -j DROP
+sudo iptables -A INPUT -s 190.217.33.0/24 -j DROP
+sudo iptables -A INPUT -s 192.69.98.0/24 -j DROP
+sudo iptables -A INPUT -s 192.69.99.0/24 -j DROP
+sudo iptables -A INPUT -s 205.185.194.0/24 -j DROP
+sudo iptables -A INPUT -s 205.196.6.0/24 -j DROP
+sudo iptables -A INPUT -s 208.64.200.0/24 -j DROP
+sudo iptables -A INPUT -s 208.64.201.0/24 -j DROP
+sudo iptables -A INPUT -s 208.64.202.0/24 -j DROP
+sudo iptables -A INPUT -s 208.64.203.0/24 -j DROP
+sudo iptables -A INPUT -s 208.78.164.0/24 -j DROP
+sudo iptables -A INPUT -s 208.78.165.0/24 -j DROP
+sudo iptables -A INPUT -s 208.78.184.0/24 -j DROP
+sudo iptables -A INPUT -s 45.121.184.0/23 -j DROP
+sudo iptables -A INPUT -s 45.121.186.0/23 -j DROP
+
 
 
   echo "-m string --string $reject_str --algo bm -j REJECT" > reject.rule
