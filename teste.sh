@@ -339,7 +339,7 @@ elif [ "$action" == "sniff" ]; then
 
   sleep 1
   if [ $platform == "psn" ]; then
-    ngrep -l -q -W byline -d $INTERFACE "psn-4" udp | grep --line-buffered -o -P 'psn-4[0]{8}\K[A-F0-9]{7}' | tee -a data.txt &
+    ngrep -l -q -W byline -d $INTERFACE "psn-4" udp | grep --line-buffered -o -P 'psn-4[0]{20}' | tee -a data.txt &
   elif [ $platform == "xbox" ]; then
     ngrep -l -q -W byline -d $INTERFACE "xboxpwid:" udp | grep --line-buffered -o -P 'xboxpwid:\K[A-F0-9]{32}' | tee -a data.txt &
   elif [ $platform == "steam" ]; then
