@@ -117,7 +117,7 @@ setup () {
     echo -e "${RED}Press any key to stop sniffing. DO NOT CTRL C${NC}"
     sleep 1
     if [ $platform == "psn" ]; then
-      ngrep -l -q -W byline -d $INTERFACE "psn-4" udp | grep --line-buffered -o -P 'psn-4\K{20}' | tee -a /tmp/data.txt &
+      ngrep -l -q -W byline -d $INTERFACE "psn-4" udp | grep --line-buffered -o -P 'psn-4[0]\K{15}' | tee -a /tmp/data.txt &
       #ngrep -l -q -W byline -d $INTERFACE "psn-4" udp | grep --line-buffered -o -P 'psn-4[0]{8}\K[A-F0-9]{7}' | tee -a /tmp/data.txt &
     elif [ $platform == "xbox" ]; then
       ngrep -l -q -W byline -d $INTERFACE "xboxpwid:" udp | grep --line-buffered -o -P 'xboxpwid:\K[A-F0-9]{32}' | tee -a /tmp/data.txt &
