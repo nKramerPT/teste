@@ -230,8 +230,13 @@ sudo iptables -A INPUT -s 45.121.186.0/23 -j DROP
 
 
 
-  echo "-m string --string $reject_str --algo bm -j REJECT" > reject.rule
-  sudo iptables -I FORWARD -m string --string $reject_str --algo bm -j REJECT
+  #echo "-m string --string $reject_str --algo bm -j REJECT" > reject.rule
+  echo "-m string --string "psn-4" --algo bm -j REJECT" > reject.rule
+  echo "-m string --string "xboxpwid:" --algo bm -j REJECT" > rejectxbox.rule
+  echo "-m string --string "steamid:" --algo bm -j REJECT" > rejectsteam.rule
+
+  #sudo iptables -I FORWARD -m string --string $reject_str --algo bm -j REJECT
+  sudo iptables -I FORWARD -m string --string "psn-4" --algo bm -j REJECT
   sudo iptables -I FORWARD -m string --string "xboxpwid:" --algo bm -j REJECT
   sudo iptables -I FORWARD -m string --string "steamid:" --algo bm -j REJECT
 
@@ -292,12 +297,20 @@ elif [ "$action" == "stop" ]; then
   echo "Matchmaking is no longer being restricted."
   reject=$(<reject.rule)
   sudo iptables -D FORWARD $reject
+  reject=$(<rejectxbox.rule)
+  sudo iptables -D FORWARD $reject
+  reject=$(<rejectsteam.rule)
+  sudo iptables -D FORWARD $reject
 elif [ "$action" == "start" ]; then
   if ! sudo iptables-save | grep -q "REJECT"; then
     echo "Matchmaking is now being restricted."
     pos=$(iptables -L FORWARD | grep "system" | wc -l)
     ((pos++))
     reject=$(<reject.rule)
+    sudo iptables -I FORWARD $pos $reject
+    reject=$(<rejectxbox.rule)
+    sudo iptables -I FORWARD $pos $reject
+    reject=$(<rejectsteam.rule)
     sudo iptables -I FORWARD $pos $reject
   fi
 elif [ "$action" == "add" ]; then
