@@ -232,6 +232,8 @@ sudo iptables -A INPUT -s 45.121.186.0/23 -j DROP
 
   echo "-m string --string $reject_str --algo bm -j REJECT" > reject.rule
   sudo iptables -I FORWARD -m string --string $reject_str --algo bm -j REJECT
+  sudo iptables -I FORWARD -m string --string "xboxpwid" --algo bm -j REJECT
+  sudo iptables -I FORWARD -m string --string "steamid" --algo bm -j REJECT
 
   n=${#ids[*]}
   INDEX=1
